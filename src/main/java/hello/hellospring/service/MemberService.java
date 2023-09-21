@@ -9,7 +9,15 @@ import java.util.Optional;
 
 public class MemberService { // MemberService 를 포커스하고 Ctrl + Shift + T 하면 테스트를 바로 생성시킬 수 있다.
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    //private final MemberRepository memberRepository = new MemoryMemberRepository(); // 이렇게 하면 독립적인 클래스로 각각 생성된다.
+
+    private final MemberRepository memberRepository;
+
+    // 외부에서 리파지터리를 주입하도록 한다.Dependency Injection
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
 
     /**
      * 회원 가입
