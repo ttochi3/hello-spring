@@ -5,10 +5,12 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService { // MemberService 를 포커스하고 Ctrl + Shift + T 하면 테스트를 바로 생성시킬 수 있다.
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository(); // 이렇게 하면 독립적인 클래스로 각각 생성된다.
